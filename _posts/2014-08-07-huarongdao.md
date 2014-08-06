@@ -4,7 +4,10 @@ title: C++11特性学习之华容道求解
 category: articles
 tags: c++11
 image:
-    feature: so-simple-sample-image-5.jpg
+    feature: so-simple-sample-image-2.jpg
+author:
+    name:   WuYu
+    avatar: bio-photo-alt.jpg
 comments: true
 share: true
 ---
