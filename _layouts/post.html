@@ -1,79 +1,76 @@
----
-layout: default
----
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include head.html %}
+</head>
 
-<link rel="stylesheet" href="/js/prettify/prettify.css" />
-<style type="text/css">
-    body { background:#e8e8e8; }
-    @media screen and (max-width: 750px){
-        body { background:#fff; }
-    }
-    @media screen and (max-width: 1020px){
-        body { background:#fff; }
-    }
-</style>
+<body id="post">
 
-<div id="content">
-    <div class="entry">
-        <h1 class="entry-title"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
-        <p class="entry-date">{{ page.date|date:"%Y-%m-%d" }}</p>
+{% include navigation.html %}
+
+<div id="main" role="main">
+  <article class="hentry">
+    {% if page.image.feature %}<img src="{{ site.url }}/images/{{ page.image.feature }}" class="entry-feature-image" alt="{{ page.title }}" {% if site.logo == null %}style="margin-top:0;"{% endif %}>{% if page.image.credit %}<p class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a>{% endif %}{% endif %}
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}</span>
+        {% if page.link %}
+          <h1 class="entry-title"><a href="{{ page.link }}">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %} <span class="link-arrow">&rarr;</span></a></h1>
+        {% else %}
+          <h1 class="entry-title">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h1>
+        {% endif %}
+      </header>
+      <footer class="entry-meta">
+        {% if page.author.name %}
+        {% if page.author.avatar %}
+        <img src="{{ site.url }}/images/{{ page.author.avatar }}" alt="{{ page.author.name }} photo" class="author-photo">
+        {% else %}
+        <img src="{{ site.url }}/images/bio-photo-alt.jpg" alt="{{ page.author.name }} photo" class="author-photo">
+        {% endif %}
+        <span class="author vcard">By <span class="fn">{{ page.author.name }}</span></span>
+        {% else %}
+        {% if site.owner.avatar %}
+        <img src="{{ site.url }}/images/{{ site.owner.avatar }}" alt="{{ site.owner.name }} photo" class="author-photo">
+        {% else %}
+        <img src="{{ site.url }}/images/bio-photo-alt.jpg" alt="{{ site.owner.name }} photo" class="author-photo">
+        {% endif %}
+        <span class="author vcard">By <span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
+        {% endif %}
+        <span class="entry-date date published"><time datetime="{{ page.date | date_to_xmlschema }}"><i class="icon-calendar-empty"></i> {{ page.date | date: "%B %d, %Y" }}</time></span>
+        {% if page.modified %}<span class="entry-date date modified"><time datetime="{{ page.modified }}"><i class="icon-pencil"></i> {{ page.modified | date: "%B %d, %Y" }}</time></span>{% endif %}
+        {% if site.disqus_shortname and page.comments %}<span class="entry-comments"><i class="icon-comment-alt"></i> <a href="#disqus_thread">Comment</a></span>{% endif %}
+        <span><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}"><i class="icon-link"></i> Permalink</a></span>
+        {% if page.share %}
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+            <!-- /.social-share -->{% endif %}
+      </footer>
+      <div class="entry-content">
         {{ content }}
+        {% if site.disqus_shortname and page.comments %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      {% if page.previous %}
+        <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous article</a>
+      {% endif %}
+      {% if page.next %}
+        <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next article</a>
+      {% endif %}
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
 
-        <div id="disqus_container">
-            <div style="margin-bottom:20px" class="right">
-                <script type="text/javascript" charset="utf-8">
-                (function(){
-                  var _w = 86 , _h = 16;
-                  var param = {
-                    url:location.href,
-                    type:'6',
-                    count:'', /**是否显示分享数，1显示(可选)*/
-                    appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
-                    title:'', /**分享的文字内容(可选，默认为所在页面的title)*/
-                    pic:'', /**分享图片的路径(可选)*/
-                    ralateUid:'1855270953', /**关联用户的UID，分享微博会@该用户(可选)*/
-                    language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
-                    rnd:new Date().valueOf()
-                  }
-                  var temp = [];
-                  for( var p in param ){
-                    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
-                  }
-                  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
-                })()
-                </script>
-            </div>
-            <a href="#" class="comment" onclick="return false;">点击查看评论</a>
-            <div id="disqus_thread"></div>
-        </div>
-    </div>
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    {% include footer.html %}
+  </footer>
+</div><!-- /.footer-wrapper -->
 
-    <!-- <div class="sidenav">
-        <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1855270953&verifier=375b89d6&dpc=1"></iframe>
-    </div>-->
+{% include scripts.html %}	        
 
-    <div class="sidenav">
-        <h2>Blog</h2>
-        <ul class="artical-list">
-        {% for post in site.categories.blog%}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-
-        <h2>Opinion</h2>
-        <ul class="artical-list">
-        {% for post in site.categories.opinion%}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-
-        <h2>Project</h2>
-        <ul class="artical-list">
-        {% for post in site.categories.project%}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-    </div>
-</div>
-
-<script src="/js/post.js" type="text/javascript"></script>
+</body>
+</html>

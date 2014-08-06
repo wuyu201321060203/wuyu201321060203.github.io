@@ -1,11 +1,75 @@
-auto: true
+title:            Thinking Yu's blog
+description:      Stay hungry , Stay foolish.
+logo:             site-logo.png
+disqus_shortname:
+search:           true
+# Change url to your domain. Leave localhost server or blank when working locally.
+# You don't need to specify the protocol if you want it available on http and https. Example: //localhost:4000
+# url:              http://localhost:4000
 
-markdown: rdiscount
-pygments: true
-paginate: 8
-permalink: /:title
+# Owner/author information
+owner:
+  name:           WuYu
+  avatar:         bio-photo.jpg
+  email:          wuyuangelysys@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  #twitter:
+  facebook:       profile.php?id=100006370261538
+  github:         wuyu201321060203
+  qq:             user.qzone.qq.com/649412424
+  blog:           thinkingyu.com
+  #stackexchange:
+  #linkedin:
+  #instagram:
+  #flickr:
+  #tumblr:
+  # For Google Authorship https://plus.google.com/authorship
+  #google_plus:
 
-title: ThinkingYu.com
-url: http://www.thinkingyu.com
-feed: /atom.xml
-author_info: <a href="www.thinkingyu.com/">ThinkingYu</a>
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Articles
+    url: /articles/
+  - title: Opinions
+    url: /opinions/
+  - title: Projects
+    url: /projects/
+  #- title: Theme Setup
+  #  url: /theme-setup/
+  #- title: Made Mistakes
+    #url: http://mademistakes.com
+  #  external: true
+
+future:      true
+highlighter: pygments
+markdown:    kramdown
+
+gems:
+  - jekyll-sitemap
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers:
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Gemfile", "Capfile", "README.md", "LICENSE", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "vendor"]
