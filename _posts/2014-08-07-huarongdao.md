@@ -18,7 +18,7 @@ share: true
 4. 问题得以求解，打印结果，程序结束。
 
 说多无益，程序及注释如下图所示：
-```
+{% highlight c++ %}
 #include <assert.h>
 #include <strings.h>
 #include <cstring>
@@ -370,4 +370,4 @@ int main(void)
 
     return 0;
 }
-```
+{% endhighlight %}
