@@ -2,7 +2,7 @@
 /* Original theme - http://alternateidea.com/blog/articles/2006/1/3/textmate-vibrant-ink-theme-and-prototype-bundle */
 .prettyprint {
   background: black;
-  font-family:  'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Monaco, Consolas, monospace;
+  font-family:  Consolas , 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Monaco, Consolas, monospace;
   font-size: 12px;
   line-height: 1.5;
   border: 1px solid #ccc;
