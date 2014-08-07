@@ -255,6 +255,7 @@ CLArrayLockedFree<T , arraysize>::pop()
 * MaxReadIndex:相当于一个“哨兵”，读取指针ReadIndex只能落后于（因为是循环数组，不能说小于）该指针。MaxReadIndex可能等于也可能落后于WriteIndex，这是由于队列的插入操作存在预取的性质，对应程序的第64行，如果预取成功则赋给那个位置新元素，然后更新MaxReadIndex位置，将新元素发布出去，完成整个插入操作。上面的程序很简单，唯一需要解释一下的就是第74行，sched_yield函数的作用是让当前线程主动让出处理器，这么做的原因是生产者需要预留生产位置进行生产，因此在更新MaxReadIndex时我们需要按顺序更新，否则前面的预留位置没赋给新元素（相当于生产者还没在这个位置生产），但后面的预留位置被赋值就会导致MaxReadIndex被更新，让消费者误认为MaxReadIndex之前元素都已经被生产好，因此如果发现更新不是按顺序发生就放弃处理器给别的线程。如果还没理解可以参照下面示意图：
 
 一个线程只插入一个元素：
+
 插入前状态：
 
 ![](/images/LQ4.png)
@@ -265,38 +266,38 @@ CLArrayLockedFree<T , arraysize>::pop()
 
 插入一个元素，移动MaxReadIndex发布出去
 
-![](/images/LQ5.png)
+![](/images/LQ6.png)
 
 再举个插入的例子，两个线程各插入一个元素：
 
 插入前状态：
 
-![](/images/LQ6.png)
+![](/images/LQ7.png)
 
 两个线程都预留出了生产位置
 
-![](/images/LQ7.png)
+![](/images/LQ8.png)
 
 一个线程完成了插入操作后：
 
-![](/images/LQ8.png)
+![](/images/LQ9.png)
 
 另一个线程也完成了插入操作：
 
-![](/images/LQ9.png)
+![](/images/LQ10.png)
 
 删除元素：
 
 删除前状态：
 
-![](/images/LQ10.png)
+![](/images/LQ11.png)
 
 某线程消费一个元素后：
 
-![](/images/LQ11.png)
+![](/images/LQ12.png)
 
 某线程又消费了一个元素后：
 
-![](/images/LQ12.png)
+![](/images/LQ13.png)
 
 这时，ReadIndex和MaxReadIndex相等了，说明队列为空，不能继续消费。
