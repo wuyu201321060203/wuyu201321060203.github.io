@@ -13,6 +13,7 @@ share: true
 ---
 华容道游戏相信大家都有所耳闻，一种起始布局如下图1所示，游戏规则很简单：每次移动一个棋子，不能重叠也不能越过其它棋子，直至把曹操移到下图2中的位置。本文将使用程序并结合C++11的一些新特性去获得华容道问题解的最小值，即最少步数。
 
+{:.center}
 ![alt text](/images/huarongdao1.png)
 ![alt text](/images/huarongdao2.png)
 
