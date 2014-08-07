@@ -16,7 +16,6 @@ share: true
 ![alt text](/images/huarongdao1.png)
 
 ![alt text](/images/huarongdao2.png)
-
 {: .pull-right}
 
 华容道问题求解算法很容易理解，就是一个广度优先搜索，步骤如下：
