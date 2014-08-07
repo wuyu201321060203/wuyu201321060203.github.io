@@ -115,6 +115,7 @@
 ol.linenums {
   margin-top: 0;
   margin-bottom: 0;
+  color:white;
 }
 
 /* IE indents via margin-left */
