@@ -13,8 +13,10 @@ share: true
 ---
 
 各种文本编辑器的“查找”功能（Ctrl + F），大多采用Boyer-Moore字符串匹配算法，它不仅效率高，并且构思奇妙，容易理解。1977年，德克萨斯大学的Robert S. Boyer教授和J Strother Moore教授发明了这种算法。
-首先，先阐述一下此算法的核心思想（算法讲解部分源自阮一峰的网络日志[^1]
+首先，先阐述一下此算法的核心思想（算法讲解部分源自阮一峰的网络日志 [^1]
+
 [^1]: <http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html>
+
 1. [!All text](/images/BM1.png)
 文本字符串为"HERE IS A SIMPLE EXAMPLE"，待搜索的字符串为"EXAMPLE"
 2. [!All text](/images/BM2.png)
