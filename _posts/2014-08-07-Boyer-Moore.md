@@ -17,7 +17,7 @@ share: true
 
 [^1]: <http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html>
 
-[!All text](/images/BM1.png)
+![alt text](/images/BM1.png)
 
 文本字符串为"HERE IS A SIMPLE EXAMPLE"，待搜索的字符串为"EXAMPLE"
 
