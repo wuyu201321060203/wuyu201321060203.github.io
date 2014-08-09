@@ -4,7 +4,7 @@ title:  无叶风扇原理图解
 category: opinions
 tags: 科学 物理
 image:
-    feature: head2.jpg
+    feature: head3.jpg
 author:
     name:   WuYu
     avatar: bio-photo-alt.jpg
