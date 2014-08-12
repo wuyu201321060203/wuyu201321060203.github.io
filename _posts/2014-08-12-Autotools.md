@@ -23,7 +23,7 @@ Autotools的基本工作流程如下图所示：
 ![](/images/autotools1.png)
 
 * 先autoscan扫描一下工程根目录，这一步会生成一个基本的配置脚本configure.scan，里面主要是一些m4(Macro)宏定义，这些定义都是告诉autoconf工具如何找到你需要的系统配置参数。
-*  将configure.scan重命名为configure.ac，修改里面的内容，修改工程包名字，版本，bug报告邮箱，添加你想要的检查项（这些检查项都用预定义的m4宏表达即可），添加你工程需要的编译选项等等，具体可以查看示例。[^1]
+*  将configure.scan重命名为configure.ac(与configure.in是同一个文件)，修改里面的内容，修改工程包名字，版本，bug报告邮箱，添加你想要的检查项（这些检查项都用预定义的m4宏表达即可），添加你工程需要的编译选项等等，具体可以查看示例。[^1]
 
 [^1]: <https://github.com/wuyu201321060203/interest/blob/master/Autotools-exercise2/EchoServer/configure.ac>
 
@@ -224,3 +224,7 @@ os.system('make')
 * 工具使用教程 [^4]
 
 [^4]: <https://github.com/wuyu201321060203/interest/tree/master/Autotools-helper>
+
+#### 5. 一些簿籍
+
+configure.ac里AC_CHECK_LIB和AC_HEADERS只检查系统库和头文件的标准路径，如果需要检测第三方库，还需要一些额外的工作，Autotools不支持C++检查
