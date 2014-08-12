@@ -225,6 +225,6 @@ os.system('make')
 
 [^4]: <https://github.com/wuyu201321060203/interest/tree/master/Autotools-helper>
 
-#### 5. 一些簿籍
+#### 5. 一些簿记
 
 configure.ac里AC_CHECK_LIB和AC_HEADERS只检查系统库和头文件的标准路径，如果需要检测第三方库，还需要一些额外的工作，Autotools不支持C++检查
