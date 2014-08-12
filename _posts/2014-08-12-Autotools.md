@@ -4,7 +4,7 @@ title:  Autotools入门使用教程
 category: Projects
 tags: autotools GNU project tools
 image:
-    feature: head3.jpg
+    feature: head4.jpg
 author:
     name:   WuYu
     avatar: bio-photo-alt.jpg
