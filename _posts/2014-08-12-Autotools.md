@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Autotools入门使用教程
-category: projects
-tags: LIRS Cache algorithm c++
+category: Projects
+tags: autotools GNU project tools
 image:
     feature: head3.jpg
 author:
@@ -25,7 +25,7 @@ Autotools的基本工作流程如下图所示：
 * 先autoscan扫描一下工程根目录，这一步会生成一个基本的配置脚本configure.scan，里面主要是一些m4(Macro)宏定义，这些定义都是告诉autoconf工具如何找到你需要的系统配置参数。
 *  将configure.scan重命名为configure.ac，修改里面的内容，修改工程包名字，版本，bug报告邮箱，添加你想要的检查项（这些检查项都用预定义的m4宏表达即可），添加你工程需要的编译选项等等，具体可以查看示例。[^1]
 
-
+[^1]: <https://github.com/wuyu201321060203/interest/blob/master/Autotools-exercise2/EchoServer/configure.ac>
 
 *  运行aclocal命令，这一步生成一个aclocal.m4的文件，这个文件含有一些工具自动帮你生成的系统检查项
 *  运行autoconf生成configure脚本
@@ -215,8 +215,12 @@ os.system('make')
 
 * 示例configure.ac [^2]
 
+[^2]: <https://github.com/wuyu201321060203/interest/blob/master/Autotools-exercise2/EchoServer/configure.ac>
+
 * 示例Makefile.am [^3]
+
+[^3]: <https://github.com/wuyu201321060203/interest/blob/master/Autotools-exercise2/EchoServer/src/Makefile.am>
 
 * 工具使用教程 [^4]
 
-*
+[^4]: <https://github.com/wuyu201321060203/interest/tree/master/Autotools-helper>
