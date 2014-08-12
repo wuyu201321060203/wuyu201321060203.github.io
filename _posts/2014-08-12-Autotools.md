@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Autotools入门使用教程
-category: Projects
+category: projects
 tags: autotools GNU project tools
 image:
     feature: head4.jpg
