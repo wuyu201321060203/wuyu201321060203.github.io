@@ -28,7 +28,7 @@ Autotools的基本工作流程如下图所示：
 [^1]: <https://github.com/wuyu201321060203/interest/blob/master/Autotools-exercise2/EchoServer/configure.ac>
 
 *  运行aclocal命令，这一步生成一个aclocal.m4的文件，这个文件含有一些工具自动帮你生成的系统检查项
-*  运行autoconf生成configure脚本
+*  运行autoheader再运行autoconf生成configure脚本
 *  编写Makefile.am文件，它是一个makefile更高层次的抽象，描述了你想要生成工程需要编译的源文件，自定义头文件路径，需要链接的动态库，可执行文件生成到哪个路径下等
 *  运行automake生成Makefile.in文件
 *  有了configure脚本就可以利用Makefile.in生成makefile，之后相信程序员都知道该如何去编译和部署工程了。
