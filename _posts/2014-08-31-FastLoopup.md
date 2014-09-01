@@ -12,6 +12,8 @@ comments: true
 share: true
 ---
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 最近由于实验室需要设计和实现一个支持OLAP的列式内存数据库，所以对一些典型的同类型数据库产品进行了一番调研。这里我把SAP HANA里基于内存的列式数据库索引引擎p*Time中所使用的索引技术整理和记录了一下，希望对大家能有所帮助。
 
 ####wikipedia上对HANA的定义如下：
