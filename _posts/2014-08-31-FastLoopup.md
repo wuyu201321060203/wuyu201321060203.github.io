@@ -56,7 +56,7 @@ p*Time所用到的核心数据结构有以下4个，其中前两项是main parti
 
 ![rebuild main](/images/fast2.png)
 
-不要被图吓到，其实操作步骤很简单。首先必须要说明一下，我们刚才讲的索引数据结构只适用于main partition，那么对于delta partition是怎样进行索引的呢？其实前面也提到了就是B+树。上图已经给出了步骤我这里解释一下，首先标示为Inputs Step 1是第一步我们需要的输入，Outputs Step 1就是我们第一步需要输出的东西，包括新字典$ (U\prime_M)^j $，辅助性数据结构增量向量表$ X_M^j $和delta partition的属性向量表$ V_D^j $。$ U_M^j $由$ U_M^j $和delta partition中的B+树合并而成，我们首先同时扫描$ U_M^j $和B+树的叶子节点，按照字符串顺序（字典顺序）做归并排序即可生成$ U_M^j $，在生成$ U_M^j $的同时需要生成$ X_M^j $，比如新插入个bodo，这是$ U_M^j $没有的，就在bodo所在的$ U_M^j $偏移1开始，依次把$ X_M^j $中的每一项加1，如上图中的$ X_M^j $所示。delta partition中的$ V_D^j $就根据新字典来填即可。
+不要被图吓到，其实操作步骤很简单。首先必须要说明一下，我们刚才讲的索引数据结构只适用于main partition，那么对于delta partition是怎样进行索引的呢？其实前面也提到了就是B+树。上图已经给出了步骤我这里解释一下，首先标示为Inputs Step 1是第一步我们需要的输入，Outputs Step 1就是我们第一步需要输出的东西，包括新字典$ ((U\prime)^j)_M $，辅助性数据结构增量向量表$ X_M^j $和delta partition的属性向量表$ V_D^j $。$ U_M^j $由$ U_M^j $和delta partition中的B+树合并而成，我们首先同时扫描$ U_M^j $和B+树的叶子节点，按照字符串顺序（字典顺序）做归并排序即可生成$ U_M^j $，在生成$ U_M^j $的同时需要生成$ X_M^j $，比如新插入个bodo，这是$ U_M^j $没有的，就在bodo所在的$ U_M^j $偏移1开始，依次把$ X_M^j $中的每一项加1，如上图中的$ X_M^j $所示。delta partition中的$ V_D^j $就根据新字典来填即可。
 
 Inputs Step2的输入部分是$ X_M^j $ ，$ V_M^j $和刚才第一步新生成的$ V_D^j $ ，Outputs Step 2输出的就是新的属性向量$ V_M^j $ ，那么它是如何生成的呢？先把$ V_M^j $根据$ X_M^j $做一个更新然后和$ V_D^j $做合并，比如$ V_M^j $中第一项是4，找到$ X_M^j $中偏移为4的项值是1，所以将5（4+1）填入$ V_M^j $第一项，以此类推。全部更新完成后直接把$ V_D^j $放到$ V_M^j $末尾，也就是简单地合并即可。
 
