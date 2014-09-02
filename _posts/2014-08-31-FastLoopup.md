@@ -70,3 +70,4 @@ Inputs Step2的输入部分是增量向量，老的属性向量和刚才第一�
 http://scn.sap.com/community/chinese/hana/blog/2012/11/20/%E6%96%B0%E7%89%88sap-hana%E7%99%BD%E7%9A%AE%E4%B9%A6%E6%8F%AD%E7%A4%BA%E7%9A%84%E4%B8%8D%E5%8F%AA%E6%98%AF%E6%8A%80%E6%9C%AF
 
 $$ y = x^2 + 1 $$
+$$ a_k^2 $$
