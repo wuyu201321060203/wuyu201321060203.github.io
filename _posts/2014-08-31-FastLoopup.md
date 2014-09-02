@@ -66,8 +66,10 @@ Inputs Step2的输入部分是增量向量，老的属性向量和刚才第一�
 ![code](/images/fast4.png)
 
 如果大家对此还觉得有些绕，可能是因为之前有一些是HANA自身架构设计导致的，建议看一下HANA的白皮书 [^1]，相信就会有比较深刻的认识。
+本文源自论文 [^2]
 
 [^1]: <http://www.saphana.com/docs/DOC-1381>
 
-$$ y = x^2 + 1 $$
+[^2]: <http://adms-conf.org/faust_adms12.pdf>
+
 $$ a_k^2 $$
