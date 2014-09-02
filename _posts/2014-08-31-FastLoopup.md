@@ -72,7 +72,7 @@ Inputs Step2的输入部分是$ X_M^j $ ，$ V_M^j $和刚才第一步新生成�
 
 ####本文源自论文 [^2]
 
-$ \log-2n $
+$ \log_2n $
 
 [^1]: <http://www.saphana.com/docs/DOC-1381>
 
