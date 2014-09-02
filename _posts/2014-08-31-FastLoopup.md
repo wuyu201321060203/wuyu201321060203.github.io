@@ -65,9 +65,9 @@ Inputs Step2的输入部分是增量向量，老的属性向量和刚才第一�
 
 ![code](/images/fast4.png)
 
-如果大家对此还觉得有些绕，可能是因为之前有一些是HANA自身架构设计导致的，建议看一下HANA的白皮书，相信就会有比较深刻的认识。
+如果大家对此还觉得有些绕，可能是因为之前有一些是HANA自身架构设计导致的，建议看一下HANA的白皮书 [^1]，相信就会有比较深刻的认识。
 
-http://scn.sap.com/community/chinese/hana/blog/2012/11/20/%E6%96%B0%E7%89%88sap-hana%E7%99%BD%E7%9A%AE%E4%B9%A6%E6%8F%AD%E7%A4%BA%E7%9A%84%E4%B8%8D%E5%8F%AA%E6%98%AF%E6%8A%80%E6%9C%AF
+[^1]: <http://www.saphana.com/docs/DOC-1381>
 
 $$ y = x^2 + 1 $$
 $$ a_k^2 $$
