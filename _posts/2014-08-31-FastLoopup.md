@@ -73,5 +73,3 @@ Inputs Step2的输入部分是增量向量，老的属性向量和刚才第一�
 [^1]: <http://www.saphana.com/docs/DOC-1381>
 
 [^2]: <http://adms-conf.org/faust_adms12.pdf>
-
-$$ a_k^2 $$
