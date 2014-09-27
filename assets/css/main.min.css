@@ -294,6 +294,9 @@ pre {
 	font-size:12px;
 	font-size:.75rem;
 	line-height:2
+    word-break:break-all
+    word-wrap:break-word;
+
 }
 
 .clearfix {
