@@ -62,7 +62,9 @@ Skip lists是一种可以在一定程度上替代平衡树的数据结构。Skip
 
 ![](/images/skiplist7.png)
 
-![](/images/skiplist8.png)
+![](/images/skiplist21.png)
+
+![](/images/skiplist22.png)
 
 #####如何随机选择节点层数
 
