@@ -1,3 +1,17 @@
+---
+layout: post
+title:  SkipList简单剖析
+category: articles
+tags: data-structure Skiplist balanced-tree
+image:
+    feature: head16.jpg
+author:
+    name:   WuYu
+    avatar: bio-photo-alt.jpg
+comments: true
+share: true
+---
+
 ####前言
 
 可以借用二叉树来表达一些抽象的数据类型，比如字典或者顺序队列。当待插入数据是按随机顺序进来的时候二叉树性能很好。然而，诸如一些具有顺序性的操作，比如数据按序插入，它的性能就会急剧下降。当然你可以打乱输入数据的固有顺序，使其具有随机的特性，这样二叉树的性能在绝大多数情况下都是很乐观的。在大多数情况下，查询都是在线完成的，所以可能没有机会一次性得到所有输入数据并对其排序。因此平衡二叉树会通过调整算法对树进行旋转等调整来保证平衡，提高性能。
