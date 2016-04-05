@@ -10,7 +10,7 @@ url:              http://www.thinkingyu.com
 # Owner/author information
 owner:
   name:           WuYu
-  avatar:         bio-photo.jpg
+  avatar:         author-head.png
   email:          wuyuangelysys@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        wuyuangelysys
@@ -48,7 +48,7 @@ links:
   #  external: true
 
 future:      true
-highlighter: pygments
+highlighter: rough
 markdown:    kramdown
 
 gems:
